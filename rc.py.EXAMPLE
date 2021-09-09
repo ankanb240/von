@@ -1,7 +1,7 @@
-import getpass
-import os
 import sys
+import os
 import tempfile
+import getpass
 
 # Pick a path to store the problems in
 # On Windows, the HOME variable doesn't exist
@@ -25,11 +25,14 @@ EDITOR = os.environ.get('EDITOR', 'vim')
 # (or if you prefer to put these in a more visible folder).
 
 # path to put previewer TeX file
-VON_PREVIEW_PATH = os.path.join(
-	tempfile.gettempdir(), "preview_" + getpass.getuser(), "von_preview.tex"
-)
+VON_PREVIEW_PATH = os.path.join(tempfile.gettempdir(), \
+  "preview_" + getpass.getuser(), "von_preview.tex")
 # path to put posted output files
-VON_POST_OUTPUT_DIR = os.path.join(tempfile.gettempdir(), "po_" + getpass.getuser())
+VON_POST_OUTPUT_DIR = os.path.join(tempfile.gettempdir(), \
+  "po_" + getpass.getuser())
+
+# Choose the default author for generated TeX files.
+VON_DEFAULT_AUTHOR = "Evan Chen"
 
 # In von, problem statement is separated from metadata
 # and solution using three dashes surrounded on its own line.
@@ -60,7 +63,6 @@ SORT_TAGS = ['trivial', 'easy', 'medium', 'tricky', 'hard', 'brutal']
 # The following lines should autodetect your operating system,
 # so you only need to change them if you have issues.
 import sys
-
 if sys.platform.startswith("win32"):
 	USER_OS = "windows"
 elif sys.platform.startswith("darwin"):
